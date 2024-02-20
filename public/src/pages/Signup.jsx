@@ -8,14 +8,19 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function Signup() {
-    const [username, setUsername] = useState('');
-    const [email, setEmail] =  useState('');
-    const [mobile, setMobile] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState("");
+    const [email, setEmail] =  useState("");
+    const [mobile, setMobile] = useState("");
+    const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
     async function handleRegister(e) {
         e.preventDefault();
+        console.log("Form Values");
+        console.log(username);
+        console.log(email);
+        console.log(password);
+        console.log(mobile);
             const response = await axios.post("http://localhost:3000/api/v1/user/signup", {
                 username: username,
                 email: email,
@@ -25,12 +30,17 @@ function Signup() {
                 headers: {
                     "Content-Type": "application/json"
                 }
-            }).then((response) => {
-                console.log(response.data);
-            });
-            // console.log(response.data.token);
-            localStorage.setItem('token', response.data.token);
-            navigate('/signin')
+            }).then(async (res) => {
+            // console.log(res.data.token)
+            localStorage.setItem('token', res.data.token);
+            navigate('/signin'); 
+        })
+    }
+
+    const handleChange = (e, setter) => {
+        const value = e.target.value;
+        console.log(value);
+        setter(value);
     }
 
     return (
@@ -40,22 +50,16 @@ function Signup() {
                     <Heading title="Sign-Up" />
                     <SubHeading title="Create your account" />
                     <form onSubmit={handleRegister}>
-                        <Input label="Username" placeholder="Enter your username" onChange={e => {
-                            setUsername(e.target.value);
-                        }}/>
-                        <Input label="Email" placeholder="Enter your email" onChange={e => {
-                            setEmail(e.target.value);
-                        }}/>
-                        <Input label="Mobile" placeholder="Enter your mobile" onChange={e => {
-                            setMobile(e.target.value);
-                        }}/>
-                        <Input label="Password" placeholder="Enter your password" onChange={e => {
-                            setPassword(e.target.value);
-                        }}/>
+                        <Input label="Username" placeholder="Enter your Username" onChange={(e) => 
+                            handleChange(e, setUsername)}/>
+                        <Input label="Email" placeholder="Enter your Email" onChange={(e) => 
+                            handleChange(e, setEmail)}/>
+                        <Input label="Mobile" placeholder="Enter your Mobile" onChange={(e) => 
+                            handleChange(e, setMobile)}/>
+                        <Input label="Password" placeholder="Enter your Password" onChange={(e) => 
+                            handleChange(e, setPassword)}/>
                         <div className="mt-4">
-                            <Button label="Sign Up" onClick={() => {
-                                navigate('/signin');    
-                            }}/>
+                            <Button label="Submit" typeb="submit"/> 
                         </div>
                     </form> 
                     <BottomWarning message="Already have an account?" buttonText="Sign In" to="/signin" />
