@@ -2,6 +2,7 @@ const express = require('express');
 const { userSchemaSignup, userSchemaSignin } = require('../types/userSchema');
 const User = require('../database/userbase');
 const jwt = require('jsonwebtoken');
+const authMiddleware = require('../middlewares/authMiddleware');
 require('dotenv').config();
 
 const router = express.Router();
@@ -71,6 +72,12 @@ router.post('/signin', async (req, res) => {
     res.status(200).json({
         message: "User signed in successfully",
         token: token
+    })
+})
+
+router.get('/', authMiddleware, (req, res) => {
+    res.status(200).json({
+        message: "Welcome to the user page!!"
     })
 })
 
