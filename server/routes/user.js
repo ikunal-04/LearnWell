@@ -75,7 +75,7 @@ router.post('/signin', async (req, res) => {
     })
 })
 
-router.get('/', authMiddleware, (req, res) => {
+router.get('/dashboard', authMiddleware, (req, res) => {
     res.status(200).json({
         message: "Welcome to the user page!!"
     })
