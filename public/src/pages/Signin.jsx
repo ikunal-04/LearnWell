@@ -32,6 +32,7 @@ function Signin() {
                 }
             }).then(async (res) => {
             // console.log(res.data.token)
+            axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.token}`;
             localStorage.setItem('token', res.data.token);
             navigate('/dashboard'); 
         })
