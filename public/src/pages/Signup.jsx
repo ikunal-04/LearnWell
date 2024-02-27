@@ -44,7 +44,7 @@ function Signup() {
     }
 
     return (
-        <div className="bg-gray-500 h-screen flex justify-center">
+        <div className="bg-gradient-to-r from-slate-900 to-slate-700 h-screen flex justify-center">
             <div className="flex flex-col justify-center">
                 <div className=" rounded-3xl bg-white w-96 text-center p-2 h-max px-4">  
                     <Heading title="Sign-Up" />

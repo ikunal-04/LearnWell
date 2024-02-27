@@ -5,7 +5,7 @@ const { courseSchemaCreate } = require('../types/courseSchema');
 
 const router = express.Router();
 
-router.post('/create', async (req, res) => {
+router.post('/create', authMiddleware, async (req, res) => {
     const payLoad = req.body;
     const { success } = courseSchemaCreate.safeParse(payLoad);
     if (!success) {
@@ -14,6 +14,7 @@ router.post('/create', async (req, res) => {
         });
     }
     await Course.create({
+        userId: req.userId,
         title: payLoad.title,
         description: payLoad.description,
         instructor: payLoad.instructor,
