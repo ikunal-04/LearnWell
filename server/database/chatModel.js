@@ -8,7 +8,7 @@ const chatSchema = new mongoose.Schema({
         type: String,
         trim: true,
     },
-    isCommunity: {
+    isGroupChat: {
         type: Boolean,
         default: false
     },
@@ -20,7 +20,7 @@ const chatSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Message",
     },
-    communityAdmin: {
+    groupAdmin: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     }
