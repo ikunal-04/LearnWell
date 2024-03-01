@@ -88,4 +88,48 @@ async function createGroup(req, res) {
     res.status(200).json(fullGroupChat);
 }
 
-module.exports = { accessChat, fetchChats, createGroup };
+async function renameGroup(req, res) {
+    const { chatId, chatName } = req.body;
+
+    const updateChat = await Chat.findByIdAndUpdate(
+        chatId,
+        {
+            chatName: chatName,
+        },
+        {
+            new: true,
+        }
+    )
+        .populate("users", "-password")
+        .populate("groupAdmin", "-password");
+
+    if (!updateChat) {
+        throw new BadRequestError("Chat Not Found");
+    } else {
+        res.json(updateChat);
+    }
+}
+
+async function addUserToGroup(req, res) {
+    const { chatId, userId } = req.body;
+
+    const addUser = await Chat.findByIdAndUpdate(
+        chatId,
+        {
+            $push: { users: userId },
+        },
+        {
+            new: true,
+        }
+    )
+        .populate("users", "-password")
+        .populate("groupAdmin", "-password");
+
+    if (!addUser) {
+        throw new BadRequestError("Chat Not Found");
+    } else {
+        res.status(201).json(addUser);
+    }
+}
+
+module.exports = { accessChat, fetchChats, createGroup, renameGroup, addUserToGroup };
