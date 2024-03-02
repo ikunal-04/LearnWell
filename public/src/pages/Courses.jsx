@@ -39,7 +39,7 @@ function Courses() {
                                     <p>{course.material}</p>
                                     <br />
                                 </div>)
-                            }) : <p>Signup first!!</p>
+                            }) : <p className="h-screen">Signup first!!</p>
                         }
                     </div>
                 </div>

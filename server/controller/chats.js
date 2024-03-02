@@ -132,4 +132,26 @@ async function addUserToGroup(req, res) {
     }
 }
 
-module.exports = { accessChat, fetchChats, createGroup, renameGroup, addUserToGroup };
+async function removeFromGroup(req, res) {
+    const { chatId, userId } = req.body;
+
+    const removeUser = await Chat.findByIdAndUpdate(
+        chatId,
+        {
+            $pull: { users: userId },
+        },
+        {
+            new: true,
+        }
+    )
+        .populate("users", "-password")
+        .populate("groupAdmin", "-password");
+
+    if (!removeUser) {
+        throw new BadRequestError("Chat Not Found");
+    } else {
+        res.status(201).json(removeUser);
+    }
+}
+
+module.exports = { accessChat, fetchChats, createGroup, renameGroup, addUserToGroup, removeFromGroup };
