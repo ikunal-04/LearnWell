@@ -3,6 +3,7 @@ import {useState, useEffect} from "react";
 import axios from "axios";
 import CreateCourseModal from "./CreateCourse";
 import { CourseCard } from "../components/CourseCard";
+import {SpinnerComp} from "../components/SpinnerComp";
 
 function Courses() {
     const [courses, setCourses] = useState([]);
@@ -23,10 +24,10 @@ function Courses() {
     },[])
 
     return (
-        <div className="h-screen  bg-gradient-to-r from-slate-900 to-slate-500 text-white">
-            <div className="max-w-screen-lg mx-auto">
+        <div className="h-screen bg-black text-white">          
+            <div className="max-w-screen-lg mx-auto">     
                 <div>
-                    <div className="sticky top-0">
+                    <div className="sticky top-0 pt-3">
                         <Button label="Create" typeb="button" onClick={() => setShowModal(true)}/>
                     </div>
                     {showModal && <CreateCourseModal onClose={() => setShowModal(false)}/>}
@@ -36,7 +37,7 @@ function Courses() {
                                 return (<div key={index} className="col-span-1">
                                     <CourseCard course={course}/>
                                 </div>)
-                            }) : <p className="h-screen">Signup first!!</p>
+                            }) : <SpinnerComp />
                         }
                     </div>
                 </div>

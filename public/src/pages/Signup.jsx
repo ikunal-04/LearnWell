@@ -45,7 +45,7 @@ function Signup() {
     }
 
     return (
-        <div className="bg-gradient-to-r from-slate-900 to-slate-700 h-screen ">
+        <div className="bg-black h-screen ">
             <div className="text-white">
                 <Appbar />
             </div>

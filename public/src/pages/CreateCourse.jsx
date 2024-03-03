@@ -1,10 +1,9 @@
 import {Heading} from "../components/Heading";
-import {SubHeading} from "../components/SubHeading";
 import {Input} from "../components/Input";
 import {Button} from "../components/Button";
 import {useState} from "react";
 import axios from "axios";
-import { X } from 'lucide-react';
+import { XCircle } from 'lucide-react';
 
 function CreateCourseModal({onClose}) {
     const [title, setTitle] = useState("");
@@ -48,18 +47,27 @@ function CreateCourseModal({onClose}) {
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
-            <div className="mt-5 flex flex-col gap-2 text-black">
-                <button onClick={onClose} className="place-self-end"><X size={30}/></button>
-                <div className="bg-gradient-to-r from-slate-500 to-slate-800 rounded-xl px-20 py-10 flex flex-col gap-5 items-center mx-2">
+            <div className=" text-black">
+                
+                <div className="bg-[#ECF9FF] rounded-xl px-20 py-10 flex flex-col gap-5 items-center mx-1">
+                <button onClick={onClose} className="place-self-end"><XCircle size={30}/></button>
                     <Heading title="Create blog!"/>
                     <div className="text-lg font-normal text-black lg:text-xl">
                         Create course for free!!
                     </div>
                     <form onSubmit={handleSubmission}>
-                        <Input label="Title" placeholder="Title" onChange={(e) => setTitle(e.target.value)}/>
-                        <Input label="Description" placeholder="Description" onChange={(e) => setDescription(e.target.value)}/>
-                        <Input label="Instructor" placeholder="Instructor" onChange={(e) => setInstructor(e.target.value)}/>
-                        <Input label="Material" placeholder="Material" onChange={(e) => setMaterial(e.target.value)}/>
+                        <Input label="Title" placeholder="Title" onChange={(e) => 
+                            setTitle(e.target.value)}/>
+                        <Input label="Description" placeholder="Description" onChange={(e) => 
+                            setDescription(e.target.value)}/>
+                        <Input label="Instructor" placeholder="Instructor" onChange={(e) => 
+                            setInstructor(e.target.value)}/>
+                        <div>
+                            <div className="text-sm font-medium text-left py-2">
+                                <label>Material</label>
+                            </div>
+                            <textarea type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" cols="50" rows="5" placeholder="Material" onChange={(e) => setMaterial(e.target.value)}/>
+                        </div>  
                         <div className="mt-5">
                             <Button label="Create" typeb="submit"/>
                         </div>

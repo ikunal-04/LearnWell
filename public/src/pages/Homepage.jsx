@@ -3,7 +3,7 @@ import {Appbar} from "../components/Appbar"
 
 function Homepage() {
     return (
-        <div className="h-screen bg-gradient-to-r from-slate-900 to-slate-500 text-white">
+        <div className="h-screen bg-black text-white">
             <div className="">
                 <Appbar />
             </div>
@@ -12,12 +12,9 @@ function Homepage() {
                     LearnWell
                 </div>
                 <div className="flex justify-center">
-                    <p className="text-lg h-max w-3/4">A comphrehensive learning and sharing platform for students and teachers.
+                    <p className="text-lg h-max w-3/5">A comphrehensive learning and sharing platform for students and teachers.
                     Here student's themselves can share knowledge using the courses functionality by creating blogs with the community. And can also can communicate with the communities too.</p>
                 </div>
-                {/* <div className="">
-                    <img className="ml-6 w-screen h-96" src={image} alt="logo" />
-                </div> */}
             </div>
         </div>
     )

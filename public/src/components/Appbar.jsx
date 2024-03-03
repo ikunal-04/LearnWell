@@ -2,6 +2,11 @@ import { Button } from "./Button"
 import { Link } from 'react-router-dom'
 
 export function Appbar() {
+
+    function logout() {
+        localStorage.removeItem('token');
+    }
+
     return (
         <div className="flex justify-between shadow-xl h-14">
             <div className="flex flex-col justify-center text-xl ml-4">
@@ -15,7 +20,7 @@ export function Appbar() {
                         <Button label="Login" typeb="button" />
                     </Link>
                     <Link to="/signup">
-                        <Button label="Signup" typeb="button"/>
+                        <Button label="Signup" typeb="button" onClick={logout}/>
                     </Link>
                 </div>
             </div>            

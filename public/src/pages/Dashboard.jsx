@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Dashboard() {
 
     return (
-        <div className="h-screen bg-gradient-to-r from-slate-900 to-slate-500 text-white">
+        <div className="h-screen bg-black text-white">
         <div>
             <div className="flex justify-between shadow-xl h-14">
                 <div className="flex flex-col justify-center text-xl ml-4">
@@ -14,7 +14,6 @@ function Dashboard() {
                 </div>
             <div className="flex flex-col justify-center">
                 <div className="flex  mr-4 mt-2">
-                    
                     <Link to="/">
                         <Button label="Logout" typeb="button"/>
                     </Link>
