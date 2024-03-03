@@ -8,12 +8,13 @@ function Homepage() {
                 <Appbar />
             </div>
             <div className="flex flex-col justify-center mt-36">
-                <div className="flex justify-center text-9xl font-bold py-2 mb-7">
+                <div className="flex justify-center text-9xl font-bold py-2 mb-7 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-violet-600 to-indigo-600">
                     LearnWell
                 </div>
                 <div className="flex justify-center">
-                    <p className="text-lg h-max w-3/5">A comphrehensive learning and sharing platform for students and teachers.
-                    Here student's themselves can share knowledge using the courses functionality by creating blogs with the community. And can also can communicate with the communities too.</p>
+                    <p className="text-lg h-max w-3/5">
+                    <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-violet-600 to-indigo-600">LearnWell</span> is Collaborative Learning web-based application designed to facilitate collaborative learning experiences among learners. Currently, the platform focuses on providing a wide range of courses in the form of blogs covering any topic or subject, allowing students to enroll and engage in interactive learning experiences. 
+                    Collaborative Learning Platform aims to empower students in their learning journey and foster a collaborative learning community.</p>
                 </div>
             </div>
         </div>
