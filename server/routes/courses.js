@@ -32,4 +32,11 @@ router.get('/', authMiddleware, async (req, res) => {
     });
 })
 
+router.get('/:id', authMiddleware, async (req, res) => {
+    const course = await Course.findById(req.params.id);
+    res.json({
+        course
+    });
+})
+
 module.exports = router;

@@ -1,5 +1,5 @@
 import {Appbar} from "../components/Appbar"
-import image from "../assets/learning_communities_logo.png"
+
 
 function Homepage() {
     return (
