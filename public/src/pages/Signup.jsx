@@ -22,7 +22,7 @@ function Signup() {
         console.log(email);
         console.log(password);
         console.log(mobile);
-            const response = await axios.post("http://localhost:3000/api/v1/user/signup", {
+            const response = await axios.post("https://learn-well-hr2x.vercel.app/api/v1/user/signup", {
                 username: username,
                 email: email,
                 password: password,

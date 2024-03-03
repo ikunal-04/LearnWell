@@ -14,7 +14,7 @@ function Courses() {
     }
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/v1/courses/", config)
+        axios.get("https://learn-well-hr2x.vercel.app/api/v1/courses/", config)
         .then(async (response) => {
           setCourses(response.data.courses);
         })

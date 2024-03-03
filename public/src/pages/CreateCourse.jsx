@@ -29,7 +29,7 @@ function CreateCourseModal({onClose}) {
         console.log(description);
         console.log(instructor);
         console.log(material);
-        const response = await axios.post("http://localhost:3000/api/v1/courses/create", {
+        const response = await axios.post("https://learn-well-hr2x.vercel.app/api/v1/courses/create", {
             title: title,
             description: description,
             instructor: instructor,

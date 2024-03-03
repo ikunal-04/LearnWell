@@ -12,7 +12,7 @@ function FullBlog() {
     }
     
     useEffect(() => {
-        axios.get(`http://localhost:3000/api/v1/courses/${id}`, config)
+        axios.get(`https://learn-well-hr2x.vercel.app/api/v1/courses/${id}`, config)
         .then(res => {
             console.log(res.data.course);
             setBlog(res.data.course);
