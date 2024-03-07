@@ -8,8 +8,8 @@ export function Appbar() {
     }
 
     return (
-        <div className="flex justify-between shadow-xl h-14">
-            <div className="flex flex-col justify-center text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-violet-600 to-indigo-600 ml-4">
+        <div className="flex justify-between shadow-xl sm:h-14">
+            <div className="flex flex-col justify-center text-lg sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-violet-600 to-indigo-600 sm:ml-4">
                 <Link to={'/'}>
                     LearnWell
                 </Link>   

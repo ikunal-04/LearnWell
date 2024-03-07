@@ -35,7 +35,7 @@ function FullBlog() {
         <div className='h-screen bg-black p-4'>
             <div className='flex justify-center text-white font-mono'>
                 <div className=''>
-                    <div className='text-8xl mb-4'>
+                    <div className='text-4xl sm:text-8xl mb-4'>
                         {blog.title}
                     </div>
                     <div className='text-lg pl-2'>

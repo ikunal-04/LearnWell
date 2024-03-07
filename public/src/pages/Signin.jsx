@@ -46,7 +46,7 @@ function Signin() {
             </div>
             <div className="flex justify-center mt-32">
                 <div className="flex flex-col justify-center">
-                    <div className=" rounded-3xl bg-white w-96 text-center p-2 h-max px-4">  
+                    <div className=" rounded-3xl bg-white w-80 sm:w-96 text-center p-2 h-max sm:px-4">  
                         <Heading title="Sign-in" />
                         <SubHeading title="Welcome back!" />
                         <form onSubmit={handleSignin}>

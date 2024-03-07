@@ -49,7 +49,7 @@ function CreateCourseModal({onClose}) {
         <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
             <div className=" text-black">
                 
-                <div className="bg-[#ECF9FF] rounded-xl px-20 py-10 flex flex-col gap-5 items-center mx-1">
+                <div className="bg-[#ECF9FF] rounded-xl px-2 py-2 gap-2 sm:px-20 sm:py-10 flex flex-col sm:gap-5 items-center sm:mx-1">
                 <button onClick={onClose} className="place-self-end"><XCircle size={30}/></button>
                     <Heading title="Create blog!"/>
                     <div className="text-lg font-normal text-black lg:text-xl">

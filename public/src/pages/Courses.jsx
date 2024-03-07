@@ -24,17 +24,17 @@ function Courses() {
     },[])
 
     return (
-        <div className="h-screen bg-black text-white">          
+        <div className="h-full sm:h-screen bg-black text-white">          
             <div className="max-w-screen-lg mx-auto">     
                 <div>
-                    <div className="sticky top-0 pt-3">
+                    <div className="sticky top-0 pt-3 px-2 sm:px-0">
                         <Button label="Create" typeb="button" onClick={() => setShowModal(true)}/>
                     </div>
                     {showModal && <CreateCourseModal onClose={() => setShowModal(false)}/>}
-                    <div className="grid grid-cols-4 gap-4">
+                    <div className="sm:grid sm:grid-cols-4 gap-4 px-2 sm:px-0">
                         {courses.length > 0 ?
                             courses.map(function (course, index) {
-                                return (<div key={index} className="col-span-1">
+                                return (<div key={index} className="sm:col-span-1">
                                     <CourseCard course={course}/>
                                 </div>)
                             }) : <SpinnerComp />
