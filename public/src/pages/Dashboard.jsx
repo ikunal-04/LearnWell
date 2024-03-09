@@ -34,7 +34,7 @@ function Dashboard() {
                             <Button label="Courses" typeb="button"/>
                         </Link>
                         <Link to={'/communities'}>
-                            <Button label="Communities" typeb="button"/>
+                            <Button label="Whiteboard" typeb="button"/>
                         </Link>
                     </div>
                 </div>

@@ -7,7 +7,7 @@ LearnWell is Collaborative Learning web-based application designed to facilitate
 - **Create Blogs:** Users can create and publish their own blogs on various topics.
 - **Share Blogs:** Share your blogs with the community and engage in discussions.
 - **Discover Blogs:** Explore a diverse range of blogs created by other users.
-- **Interact with Community:** This feature is currently in development phase ⚒️.
+- **Whiteboard:** Explore this feature to plan things with creativity.
 
 
 ## Installation
@@ -24,6 +24,7 @@ To run the Collaborative Learning Platform locally, follow these steps:
 
 1. Register an account or log in if you already have one.
 2. Explore available blogs already created by other users.
+3. And start creating your own too.
 
 ## Contributing
 
